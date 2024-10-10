@@ -26,6 +26,7 @@ function testConditions(pet, time) {
 }
 
 function testForLoop(pet) {
+    console.log(`${pet.petName}'s fur colors:`);
     for (let i = 0; i < pet.furColors.length; i++) {
         let furColor = pet.furColors[i];
         console.log(furColor);
@@ -33,6 +34,7 @@ function testForLoop(pet) {
 }
 
 function testForInLoop(pet) {
+    console.log(`${pet.petName}'s fur colors:`);
     for (furColor in pet.furColors) {
         console.log(pet.furColors[furColor]);
     }
@@ -40,6 +42,7 @@ function testForInLoop(pet) {
 
 function testWhileLoop(pet) {
     let i = 0;
+    console.log(`${pet.petName}'s fur colors:`);
     while (i < pet.furColors.length) {
         let furColor = pet.furColors[i];
         console.log(furColor);
@@ -49,6 +52,7 @@ function testWhileLoop(pet) {
 
 function testDoWhileLoop(pet) {
     let i = 0;
+    console.log(`${pet.petName}'s fur colors:`);
     do {
         let furColor = pet.furColors[i];
         console.log(furColor);
