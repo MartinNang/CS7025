@@ -1,0 +1,9 @@
+#slideshow-image {
+    height: 700px;
+    background-size: cover;
+    align-items: center;
+}
+
+body {
+    text-align: center;
+}
