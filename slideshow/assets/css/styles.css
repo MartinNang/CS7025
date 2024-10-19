@@ -1,9 +1,18 @@
 #slideshow-image {
     height: 700px;
-    background-size: cover;
-    align-items: center;
+}
+
+#bg-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 15%;
+    margin: auto;
+    font-size: 30em;
+    z-index: -1;
 }
 
 body {
     text-align: center;
+    vertical-align: middle;
 }

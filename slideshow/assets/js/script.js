@@ -1,4 +1,4 @@
-let i = 1; // starting with the second image, because the page is already loaded with the first image
+let i = 0;
 
 $.ajax({
     url: "assets/js/images.json",
@@ -7,7 +7,6 @@ $.ajax({
         console.log("test");
         if (data) {
             updateSlideImage(data[i++]);
-            console.log("url:", data[i].url);
             window.setInterval(() => {
                 if (i == data.length)
                 {
@@ -16,7 +15,6 @@ $.ajax({
                 updateSlideImage(data[i++]);
             }, 5000);            
         }
-
     }
 });
 
@@ -26,13 +24,22 @@ function updateSlideImage(image) {
     let slideshowImg = $("#slideshow-image");
     slideshowImg.attr("src", image.url);
     slideshowImg.attr("alt", image.description);
+
+    let bgText = $("#bg-text");
     
-    // check if window width is smaller than 600px
+    // make image fullscreen and remove background text if window width is smaller than 600px
     if (window.innerWidth <= 600) {
         console.log("window width", window.innerWidth);
-        slideshowImg.css("object-position", "center " + image.yposition);
+        slideshowImg.css("object-position", `center ${image.yposition}`);
         slideshowImg.css("width", "100%");
+        slideshowImg.css("height", "100%");
         slideshowImg.css("object-fit", "cover");
-        slideshowImg.css("overflow", "hidden");
+
+        bgText.text("");    
+    }
+    else {
+        slideshowImg.css("width", "");
+        slideshowImg.css("height", "700px");
+        bgText.text(image.title);
     }
 }
